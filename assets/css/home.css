@@ -1,0 +1,129 @@
+body{
+    font-family: sans-serif;
+}
+#heading{
+    text-align: center;
+}
+
+#f{
+    border-bottom: 1px solid grey;
+}
+
+#b{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey ;
+    padding-bottom: 10px;
+}
+
+#descrip{
+   width: 100%;
+   border: none;
+}
+
+
+.left{
+    border-left: 1px solid grey;
+    padding-left: 20px ;
+}
+
+.space{
+    padding-bottom: 20px;
+}
+
+.all_list{
+    display: grid;
+}
+#c{
+    width: 60%;
+}
+#d{
+    width: 40%;
+}
+.inside_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+input, select, option{
+    border: none;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serifs;
+
+}
+
+.butt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border: 0px;
+    font-size: 18px;
+    padding: 10px;
+     margin: 10px;
+}
+
+i{
+    padding: 5px;
+}
+
+#add{
+    background-color: rgb(59, 59, 59);
+    color: white;
+}
+#add:hover{
+    background-color: black;
+}
+
+#delete{
+    background-color: red;
+    color: white;
+}
+#delete:hover{
+    background-color: rgb(156, 4, 4);
+}
+
+#list{
+    display: grid;
+    margin-top: 20px;
+}
+
+#items{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid gray ;
+    align-items: center;
+}
+#check{
+    width: 30px;
+    padding-left: 10px;
+}
+
+.details{
+    width: 85%;
+}
+
+.but{
+    padding: 10px;
+}
+
+#WORK{
+    background-color: blueviolet;
+    color: white;
+}
+#PERSONAL{
+    background-color: blue;
+    color: white;
+}
+#SCHOOL{
+    background-color: rgb(255, 0, 89);
+    color: white;
+}
+
+.dat{
+    font-size: small;
+    color: #3d3d3d;
+    font-weight: bold;
+}

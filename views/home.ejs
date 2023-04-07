@@ -1,0 +1,71 @@
+<html>
+    <head>
+       <title> <%= title %></title>
+    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/css/home.css">
+    <body>
+        <h1 id="heading">TODO APP</h1>
+        <div>
+
+            <!-- creating form to add list items -->
+        <form action="/create-item" method="post">
+            <div class="all_list" id="f">
+                <div id="b">
+            <P><label for="descrip">DESCRIPTION</label></P>
+            <input type = "textbox" id="descrip" placeholder="What do you need to do?" name="des" required></div>
+            <div class="inside_list">
+                <div class="all_list space" id="c">
+            <p><label for="cat">CATEGORY</label></p>
+            <select id="cat" name="cat">
+                <option>Choose a category</option>
+                <option>PERSONAL</option>
+                <option>WORK</option>
+                <option>SCHOOL</option>
+            </select></div>
+            <div class="all_list left space" id="d">
+            <p><label for="date">DUE DATE</label></p>
+            <input type="date" id="date" placeholder="dd/mm/yyyy" name="date" required>
+            </div>
+        </div>
+    </div>
+
+            <button type="submit" class="butt" id="add">
+                <i class="fa-solid fa-plus"></i>
+                ADD TASK
+            </button>
+        </form>
+
+        <!-- create the todo list where deletion and checking list items can be done -->
+        <form action="/delete-item" method="get">
+
+        <div id="list">
+            <% 
+            for(let i of todo_list){ 
+            %>
+            
+             <div id="items">
+                <div id="check"><input type="checkbox" uid = '<%= i._id %>' name='<%= i._id %>' class="ch" onclick="checkedorNot()"></div>
+                <div class="details" uid= '<%= i._id %>' >
+                    <div id='<%=i._id %>' > <%= i.des %></div>
+                <div >
+                    <i class="fa-regular fa-calendar-days"></i>
+                   <span class="dat" id='<%= i._id + i.date %>'><%= i.date %></span>
+                </div></div>
+                <div>
+                    <% if(i.cat) {%>
+                <div id="<%= i.cat%>" class="but"><%= i.cat %></div></div> <% } %>
+             </div>
+            <%  } %>
+        </div>
+        <button class="butt" type="submit" id="delete" >
+            <i class="fa-solid fa-trash-can"></i>
+            DELETE TASK
+        </button>
+
+</form>
+        <script type="text/javascript" src="/js/script.js"> 
+             
+        </script>
+    </body>
+</html>
